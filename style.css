@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 * {
     margin: 0;
     padding: 0;
@@ -468,4 +469,476 @@ footer {
     .about-box {
         max-width: 90%;
     }
+=======
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #939598;
+    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+    padding-top: 70px;
+}
+
+@font-face {
+    font-family: "Neusharp";
+    src: url("asset/font/Neusharp-Bold.otf") format("truetype");
+    font-weight: bold;
+}
+
+h1, h2, h3, p {
+    font-family: "Neusharp", sans-serif;
+}
+
+
+/* =========================
+   HEADER / NAVBAR
+========================= */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    background: rgba(147, 149, 152, 0.336);
+    color: #214777;
+    z-index: 1000;
+    backdrop-filter: blur(0px);
+}
+
+.navbar-brand img {
+    width: 50px;
+}
+
+header .nav-links {
+    display: flex;
+    list-style: none;
+}
+
+header .nav-links li {
+    margin-left: 20px;
+}
+
+header .nav-links a {
+    font-family: "Neusharp", sans-serif;
+    color: #214777;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* =========================
+   MOBILE MENU
+========================= */
+.menu-btn {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #214777;
+}
+
+@media (max-width: 768px) {
+
+    .menu-btn {
+        display: block;
+    }
+
+    header .nav-links {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.95);
+        padding: 20px 0;
+        gap: 20px;
+        display: none;
+    }
+
+    header .nav-links.show {
+        display: flex;
+    }
+
+    header .nav-links li {
+        margin: 10px 0;
+    }
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero .slide h1,
+.hero .slide p,
+.hero .slide .btn {
+    transform: translateY(20px);
+    opacity: 0;
+    transition: 1.5s;
+}
+
+.hero .slide.active h1,
+.hero .slide.active p,
+.hero .slide.active .btn {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.hero {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 8%;
+    text-align: right;
+    color: #224676;
+}
+
+/* Background Image */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("asset/img/bg2.png") center/cover no-repeat;
+    z-index: -1;
+    animation: zoom 8s infinite alternate;
+}
+
+/* Slides */
+.hero .slide {
+    position: absolute;
+    right: 8%;
+    width: 100%;
+    max-width: 600px;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+/* Active Slide */
+.hero .slide.active {
+    opacity: 1;
+}
+
+/* Hero Text */
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+}
+
+/* Zoom Animation */
+@keyframes zoom {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.1);
+    }
+}
+
+/* Button */
+.btn {
+    padding: 10px 20px;
+    background-color: #3670ee;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    transition: background 5s;
+}
+
+.btn:hover {
+    background-color: #2851c2;
+}
+
+/* =========================
+   ABOUT SECTION
+========================= */
+.about-section {
+    padding: 30px 40px 30px;
+    background: #939598;
+    text-align: center;
+}
+
+.about-title {
+    font-size: 2.5rem;
+    color: #214777;
+    margin-bottom: 50px;
+}
+
+.about-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 1200px;
+    margin: auto;
+    justify-content: center;
+}
+
+.about-box {
+    background: white;
+    border-radius: 15px;
+    padding: 35px 25px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    flex: 1 1 280px;
+    max-width: 320px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 0.6s ease;
+}
+
+.about-box.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.about-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.about-icon {
+    width: 70px;
+    margin-bottom: 20px;
+}
+
+.about-box h2 {
+    color: #E68D47;
+    margin-bottom: 15px;
+}
+
+.about-box p {
+    color: #214777;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* =========================
+   SERVICES SECTION
+========================= */
+.services {
+    padding: 0;
+}
+
+/* Wrapper */
+.services-wrapper {
+    display: flex;
+    min-height: 500px;
+}
+
+/* LEFT SIDE - SERVICES */
+.services-left {
+    flex: 1;
+    background: #e68d47;
+    padding: 40px 5%;
+    color: #214777;
+}
+
+.services-left h1 {
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+}
+
+.service-card {
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: white;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+}
+
+.service-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0; /* prevents image from shrinking */
+}
+
+.service-card h3 {
+    margin: 0;
+    line-height: 1;   /* 🔥 THIS fixes visual centering */
+}
+
+/* RIGHT SIDE - WHY CHOOSE US */
+.services-right {
+    flex: 1;
+    background: #224676;
+    padding: 40px 5%;
+    color: #e68d47;
+}
+
+.services-right h1 {
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+}
+.service-card-right h3 {
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;   /* vertical center */
+    gap: 15px;
+    color: white;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+    margin: 0;
+    line-height: 3.5;   /* 🔥 THIS fixes visual centering */
+}
+/* =========================
+   BRIEF HISTORY
+========================= */
+
+.history {
+    padding: 30px 10%;
+    background: #939598;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: #214777;
+    margin-bottom: 40px;
+}
+
+.history-container {
+    max-width: 900px;
+    margin: auto;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #214777;
+}
+/* =========================
+   HUSTLING SECTION
+========================= */
+
+.hustling {
+    padding: 20px 10%;
+    background: #939598;
+    text-align: center;
+}
+
+.hustling-container {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    line-height: 1.8;
+    color: #214777;
+}
+
+.hustling-card p {
+    color: #214777;
+    line-height: 1.6;
+}
+
+/* =========================
+   EQUIPMENT SECTION
+========================= */
+
+.equipment {
+    padding: 20px 10%;
+    background: #939598;
+    text-align: center;
+}
+
+.equipment-container h1 {
+    color: #214777;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.equipment-container h2 {
+    color: #214777;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+}
+
+.equipment-container ul {
+    list-style: disc;
+    list-style-position: inside;
+    color: #214777;
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.equipment-container li {
+    margin-bottom: 5px;
+}
+/* =========================
+   CONTACT
+========================= */
+.contact {
+    padding: 10px 10px;
+    text-align: center;
+    background: #939598;
+    color: #224676;
+}
+.viber-logo {
+    width: 24px;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+    background: #214777;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+/* =========================
+   RESPONSIVE FIXES
+========================= */
+@media (max-width: 768px) {
+
+    .hero {
+        justify-content: center;
+        text-align: center;
+        padding: 0 20px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .about-section {
+        padding-top: 140px;
+    }
+
+    .about-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-box {
+        max-width: 90%;
+    }
+>>>>>>> bf0f09fc69caa30b8f9420877ef27be2bf837da1
 }
